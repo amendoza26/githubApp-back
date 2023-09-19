@@ -18,7 +18,7 @@
 
 ### 1. Clone the repository
 
-##### On the terminal use the command: git clone https://github.com/amendoza26/githubApp.git
+##### On the terminal use the command: git clone https://github.com/amendoza26/githubApp-back.git
 
 ### Navigate to the project directory
 
