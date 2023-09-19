@@ -1,14 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import axios, { AxiosResponse } from 'axios';
-
-const token = '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';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class CommitsService {
+  constructor(private readonly configService: ConfigService) {}
   public async userRepoCommits(
     username: string,
     repoName: string,
   ): Promise<AxiosResponse<any>> {
+    const token = this.configService.get<string>('TOKEN');
     try {
       const apiUrl = `https://api.github.com/repos/${username}/${repoName}/commits`;
       const response = await axios.get(apiUrl, {
